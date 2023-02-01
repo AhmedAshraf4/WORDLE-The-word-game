@@ -82,28 +82,5 @@ def round(guess, word):
     return score
 
 
-word = randomWord(array)
-"""
-for i in range (0,6):
-    a = input("Enter letter 1")
-    b = input("Enter letter 2")
-    c = input("Enter letter 3")
-    d = input("Enter letter 4")
-    e = input("Enter letter 5")
-
-    guess = concatenate(a, b, c, d, e)
-
-    if not check(array,guess,0,len(array)):
-        print("YOU LOST!!")
-        break
-
-    arr = round(guess,word)
-    if checkWin(arr):
-        print("YOU WON!!")
-        print(word)
-        break
-
-"""
-
 
 
