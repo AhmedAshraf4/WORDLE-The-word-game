@@ -418,7 +418,7 @@ class Ui_MainWindow(object):
         font.setPointSize(12)
         self.confirm.setFont(font)
         self.confirm.setObjectName("confirm")
-        self.confirm.setStyleSheet("background-color: #808388 ;border: 1px solid #white")
+        self.confirm.setStyleSheet("background-color: #808388 ;border: 1px solid #white;  color: white")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 666, 21))
@@ -429,21 +429,21 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         for i in range(11, 16):
-            exec(f"self.i{i}.setStyleSheet(\"background-color: #3A3B3C ;border: 1px solid #808080;\") ")
+            exec(f"self.i{i}.setStyleSheet(\"background-color: #3A3B3C ;border: 1px solid #808080; color: white\") ")
         for i in range(21, 26):
-            exec(f"self.i{i}.setStyleSheet(\"background-color: #3A3B3C ;border: 1px solid #808080;\") ")
+            exec(f"self.i{i}.setStyleSheet(\"background-color: #3A3B3C ;border: 1px solid #808080; color: white\") ")
             exec(f"self.i{i}.setReadOnly(True) ")
         for i in range(31, 36):
-            exec(f"self.i{i}.setStyleSheet(\"background-color: #3A3B3C ;border: 1px solid #808080;\") ")
+            exec(f"self.i{i}.setStyleSheet(\"background-color: #3A3B3C ;border: 1px solid #808080; color: white\") ")
             exec(f"self.i{i}.setReadOnly(True) ")
         for i in range(41, 46):
-            exec(f"self.i{i}.setStyleSheet(\"background-color: #3A3B3C ;border: 1px solid #808080;\") ")
+            exec(f"self.i{i}.setStyleSheet(\"background-color: #3A3B3C ;border: 1px solid #808080; color: white\") ")
             exec(f"self.i{i}.setReadOnly(True) ")
         for i in range(51, 56):
-            exec(f"self.i{i}.setStyleSheet(\"background-color: #3A3B3C ;border: 1px solid #808080;\") ")
+            exec(f"self.i{i}.setStyleSheet(\"background-color: #3A3B3C ;border: 1px solid #808080; color: white\") ")
             exec(f"self.i{i}.setReadOnly(True) ")
         for i in range(61, 66):
-            exec(f"self.i{i}.setStyleSheet(\"background-color: #3A3B3C ;border: 1px solid #808080;\") ")
+            exec(f"self.i{i}.setStyleSheet(\"background-color: #3A3B3C ;border: 1px solid #808080; color: white\") ")
             exec(f"self.i{i}.setReadOnly(True) ")
 
         self.board = [
@@ -459,7 +459,6 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
         self.word = randomWord(array)
-        print(self.word)
 
     def gameRound(self):
         print(self.word)
@@ -473,12 +472,12 @@ class Ui_MainWindow(object):
 
         if not check(array, guess, 0, len(array)):
             for i in range(x*10+1, x*10+6):
-                exec(f"self.i{i}.setStyleSheet(\"background-color: #B31B1B ;border: 1px solid #B31B1B;\") ")
+                exec(f"self.i{i}.setStyleSheet(\"background-color: #B31B1B ;border: 1px solid #B31B1B; color: white\") ")
         else:
             res = round(guess,self.word)
             if checkWin(res):
                 for i in range(x * 10 + 1, x * 10 + 6):
-                    exec(f"self.i{i}.setStyleSheet(\"background-color: #40ba0f ;border: 1px solid #40ba0f;\") ")
+                    exec(f"self.i{i}.setStyleSheet(\"background-color: #40ba0f ;border: 1px solid #40ba0f; color: white\") ")
                     msg = QMessageBox()
                     msg.setIcon(QMessageBox.Information)
                     msg.setText("You Won!!")
@@ -489,11 +488,11 @@ class Ui_MainWindow(object):
             else:
                 for i in range(5):
                     if res[i] == 0:
-                        self.board[x-1][i].setStyleSheet("background-color: #3A3B3C ;border: 1px solid #808080;")
+                        self.board[x-1][i].setStyleSheet("background-color: #3A3B3C ;border: 1px solid #808080; color: white")
                     elif res[i] == 2:
-                        self.board[x-1][i].setStyleSheet("background-color: #40ba0f ;border: 1px solid #40ba0f;")
+                        self.board[x-1][i].setStyleSheet("background-color: #40ba0f ;border: 1px solid #40ba0f; color: white")
                     else:
-                        self.board[x-1][i].setStyleSheet("background-color: #f2db00 ;border: 1px solid #f2db00;")
+                        self.board[x-1][i].setStyleSheet("background-color: #f2db00 ;border: 1px solid #f2db00; color: white")
             self.round = self.round + 1
             if self.round == 7 and not checkWin(res):
                 print("HI")
