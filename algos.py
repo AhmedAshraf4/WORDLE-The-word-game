@@ -78,14 +78,12 @@ def round(guess, word):
                 score[i] = 1
                 letterCount[j] = letterCount[j] - 1
 
-
-    print(word)
     print(score)
     return score
 
 
 word = randomWord(array)
-
+"""
 for i in range (0,6):
     a = input("Enter letter 1")
     b = input("Enter letter 2")
@@ -102,7 +100,10 @@ for i in range (0,6):
     arr = round(guess,word)
     if checkWin(arr):
         print("YOU WON!!")
+        print(word)
         break
+
+"""
 
 
 
